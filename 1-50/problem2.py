@@ -11,10 +11,6 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 '''
 
-
-
-x = [1, 2]
-
 def fn1(x):
     if x == 1:
         return 1
