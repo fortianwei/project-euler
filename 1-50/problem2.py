@@ -71,29 +71,15 @@ def testWithGenerator():
             total += temp
     print total
 
-start = time.time()
-testWithRecursive()
-print 'testWithRecursive,time used:',time.time()-start
-
-
-start = time.time()
-testWithGenerator()
-print 'testWithGenerator,time used:',time.time()-start
-
-
-start = time.time()
-testWithMathmatics()
-print 'testWithMathmatics,time used:',time.time()-start
-
 import timeit
 
 t1 = timeit.Timer('testWithRecursive()', 'from __main__ import testWithRecursive')
 t2 = timeit.Timer('testWithGenerator()', 'from __main__ import testWithGenerator')
 t3 = timeit.Timer('testWithMathmatics()', 'from __main__ import testWithMathmatics')
 
-print '11',t1.timeit(1)
-print '22',t2.timeit(1)
-print '33',t3.timeit(1)
+print 'testWithRecursive',t1.timeit(1)
+print 'testWithGenerator',t2.timeit(1)
+print 'testWithMathmatics',t3.timeit(1)
 # [int(1/5**0.5*(((1+5**0.5)/2)**(x+2) - ((1-5**0.5)/2)**(x+2))) for x in count(1) ]
 
 
