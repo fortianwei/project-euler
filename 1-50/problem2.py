@@ -19,17 +19,15 @@ def fn1(x):
     else:
         return fn1(x-2) + fn1(x-1)
 
-def fn2(x):
-    return int(1/5**0.5*(((1+5**0.5)/2)**(x+2) - ((1-5**0.5)/2)**(x+2)))
+def fn2(n):
+    return int(1/5**0.5*(((1+5**0.5)/2)**(n+2) - ((1-5**0.5)/2)**(n+2)))
 
 
 from itertools import count
-import time
 
 
 def testWithRecursive():
     total = 0
-    print time.time()
     for i in count(1):
         temp = fn1(i)
         if temp > 4000000:
@@ -40,12 +38,11 @@ def testWithRecursive():
 
 def testWithMathmatics():
     total = 0
-    print time.time()
     for i in count(1):
         temp = fn2(i)
         if temp > 4000000:
             break
-        if temp % 2 ==0:
+        if temp % 2 == 0:
             total += temp
     print total
 
@@ -73,10 +70,9 @@ t1 = timeit.Timer('testWithRecursive()', 'from __main__ import testWithRecursive
 t2 = timeit.Timer('testWithGenerator()', 'from __main__ import testWithGenerator')
 t3 = timeit.Timer('testWithMathmatics()', 'from __main__ import testWithMathmatics')
 
-print 'testWithRecursive',t1.timeit(1)
-print 'testWithGenerator',t2.timeit(1)
-print 'testWithMathmatics',t3.timeit(1)
-# [int(1/5**0.5*(((1+5**0.5)/2)**(x+2) - ((1-5**0.5)/2)**(x+2))) for x in count(1) ]
+print 'testWithRecursive', t1.timeit(1)
+print 'testWithGenerator', t2.timeit(1)
+print 'testWithMathmatics', t3.timeit(1)
 
 
 '''
