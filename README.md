@@ -1,2 +1,2 @@
 # project-euler
-My practise,to solve problems in https://projecteuler.net
+My practises,to solve problems in https://projecteuler.net
