@@ -25,7 +25,7 @@ public class MyReceiver extends BroadcastReceiver {
 			String app_name=intent.getStringExtra("app_name");
 			//App的包名
 			String pack_name=intent.getStringExtra("pack_name");
-			Toast.makeText(context, app_name+"成功激活,赠送" + number + name+pack_name, 0).show();
+			Toast.makeText(context, app_name+"成功激活,赠送" + number + name+pack_name, Toast.LENGTH_SHORT).show();
 			System.out.println(app_name+"成功激活,赠送" + number + name);
 		}
 	}
