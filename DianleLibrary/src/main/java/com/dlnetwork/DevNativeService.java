@@ -347,13 +347,13 @@ public class DevNativeService extends Service {
 						this,
 						app.getName() + " 已加" + " ".trim() + "入下" + " ".trim()
 								+ "载任" + " ".trim() + "务中或已下" + " ".trim()
-								+ "载完" + " ".trim() + "成！", 3000).show();
+								+ "载完" + " ".trim() + "成！", Toast.LENGTH_LONG).show();
 				return;
 			}
 			Toast.makeText(
 					this,
 					app.getName() + "已加" + " ".trim() + "入下" + " ".trim()
-							+ "载队" + " ".trim() + "列...请稍候...", 3000).show();
+							+ "载队" + " ".trim() + "列...请稍候...", Toast.LENGTH_LONG).show();
 			// Log.i("url",app.getUrl());
 			DianleURLConnection.addFailedOpenName(app.getPackageName());
 			app.mNotifiMana = new NotifiMana(this, app.getUrl(), app.getName());

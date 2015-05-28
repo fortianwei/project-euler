@@ -84,7 +84,7 @@ public final class DevInit {
 	 */
 	public static void showOffers(Context context) {
 		if (SDPropertiesUtils.getSDPath() == null) {
-			Toast.makeText(context, "SD卡不可用", 3000).show();
+			Toast.makeText(context, "SD卡不可用", Toast.LENGTH_LONG).show();
 			return;
 		}
 		Intent intent = new Intent(context, activityClass);
