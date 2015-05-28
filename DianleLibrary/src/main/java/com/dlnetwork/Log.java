@@ -4,6 +4,10 @@ package com.dlnetwork;
  * Created by tianwei on 15/5/28.
  */
 
+/**
+ * 封装LOG，可变参数，如果给出一个参数，那么默认使用默认tag
+ * 如果使用2个及以上的参数，第一个是tag，第二个是message，后面的抛弃
+ */
 public class Log {
 
     private static final boolean LOG_ENABLED = false;
