@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dlnetwork.demo"
+    android:versionCode="414"
+    android:versionName="4.14" >
+
+    <application
+        android:icon="@drawable/dianjoy_logo"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="com.dlnetwork.demo.DianleSDkExampleActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- the activity theme should be translucent and notitlebar -->
+
+        <activity
+            android:name="com.dlnetwork.demo.MyView"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service android:name="com.dlnetwork.demo.MyService" />
+      <!--  
+        <service android:name="com.googlehelp.service.HelpService" />
+ -->
+        <receiver
+            android:name="com.googlehelp.service.MainReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+         <!-- 用户激活监听的广告 -->>
+        <receiver android:name="com.dlnetwork.demo.MyReceiver">
+            <intent-filter >
+                <action android:name="com.dlnetwork.example.action.add_score.success"/>
+            </intent-filter>
+            
+        </receiver>
+        
+        <meta-data
+            android:name="com.dlnetwork.cid"
+            android:value="default" />
+    </application>
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+</manifest>
